@@ -6,12 +6,12 @@ import React, { Component, PropTypes } from 'react';
 export class App extends Component {
   constructor() {
     super();
-    this.state = { pageTitle: "My app"};
+    this.state = { pageTitle: "My app" };
     this._setTitle = this._setTitle.bind(this);
   }
 
   _setTitle(title) {
-    this.setState({ pageTitle: title});
+    this.setState({ pageTitle: title });
   }
 
   render() {

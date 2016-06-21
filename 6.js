@@ -10,6 +10,7 @@ export class CommentBox extends Component {
 
   _fetchComments() {
     // We don't care about this method implementation
+    // However it's worth noting that it updates the component's state
   }
 
   // We don't show the name of the method

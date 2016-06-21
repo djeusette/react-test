@@ -13,8 +13,8 @@ export class CommentBox extends Component {
     // However it's worth noting that it updates the component's state
   }
 
-  // We don't show the name of the method
-  lifecycleMethod() {
+  // Voluntarily obfuscated
+  componentXXX() {
     setInterval(() => this._fetchComments(), 5000);
   }
 

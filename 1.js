@@ -1,5 +1,6 @@
-// Here is an ES5 component.  Translate it to ES6.  Then render it in the target container with
-// id 'app'.
+// Here is an ES5 component.
+// Translate it to TypeScript and use the Functional component approach.
+// Then render it in the target container with id 'app'.
 
 // <!DOCTYPE html>
 // <html>
@@ -8,23 +9,21 @@
 //   </body>
 // </html>
 
-var React = require('react');
+var React = require("react");
 
 var SearchFilter = React.createClass({
-  getInitialState: function() {
-    return {visible: false};
+  getInitialState: function () {
+    return { visible: false };
   },
-  handleClick: function() {
-    this.setState({visible: true});
+  handleClick: function () {
+    this.setState({ visible: true });
   },
-  render: function() {
+  render: function () {
     return (
       <div className="search">
         <i className="icon icon-search" onClick={this.handleClick}></i>
-        <p>
-          Is the filter visible? {this.state.visible}
-        </p>
+        <p>Is the filter visible? {this.state.visible}</p>
       </div>
     );
-  }
+  },
 });

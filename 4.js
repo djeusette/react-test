@@ -1,6 +1,6 @@
 // How can you refactor this class to manipulate the DOM the React way?
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 
 export class CommentBox extends Component {
   static propTypes = {
@@ -8,8 +8,12 @@ export class CommentBox extends Component {
   };
 
   componentDidMount() {
-    $('.show-btn').on('click', () => { $('.comment-list').show(); });
-    $('.hide-btn').on('click', () => { $('.comment-list').hide(); });
+    $(".show-btn").on("click", () => {
+      $(".comment-list").show();
+    });
+    $(".hide-btn").on("click", () => {
+      $(".comment-list").hide();
+    });
   }
 
   render() {
@@ -23,4 +27,4 @@ export class CommentBox extends Component {
       </div>
     );
   }
-};
+}

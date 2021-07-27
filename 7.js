@@ -1,18 +1,18 @@
-// What's the problem with that implementation?
-// How can we easily fix that problem?
+// Is there a problem with that implementation?
+// If so, what is it and how would you fix it?
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export class Test extends Component {
   constructor() {
-    this.state = { value: { foo: 'bar' } };
+    this.state = { value: { foo: "bar" } };
     this.onClick = this.onClick.bind(this);
   }
 
   onClick() {
     let value = this.state.value;
-    value.foo += 'bar';
-    this.setState({ value: value});
+    value.foo += "bar";
+    this.setState({ value: value });
   }
 
   render() {
@@ -23,7 +23,7 @@ export class Test extends Component {
       </div>
     );
   }
-};
+}
 
 export class InnerComponent extends Component {
   static propTypes = {

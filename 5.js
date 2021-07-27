@@ -1,7 +1,7 @@
 // Complete this piece of code to actually create the comment
 // when the form is submitted
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 
 export class CommentBox extends Component {
   constructor() {
@@ -21,7 +21,7 @@ export class CommentBox extends Component {
       </div>
     );
   }
-};
+}
 
 export class CommentForm extends Component {
   constructor() {
@@ -35,10 +35,10 @@ export class CommentForm extends Component {
 
   render() {
     return (
-      <form role="form" onSubmit={this._handleSubmit()} className="form comment">
+      <form role="form" onSubmit={this._handleSubmit} className="form comment">
         <input placeholder="Name:" />
         <textarea placeholder="Comment:" />
       </form>
     );
   }
-};
+}

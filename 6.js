@@ -1,9 +1,12 @@
-// Component lifecycle: if we had to fetch the comments from a remote server,
-// when would we perform that action?  What's the name of the lifecycle method below?
+// Component lifecycle: if we had to fetch the comments
+// from a remote server, when would we perform that action?
+// What's the name of the lifecycle method below?
+// Using a functional component and React hooks,
+// how would you do it?
 
 // What's the problem with the implementation below?
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export class CommentBox extends Component {
   // ...
@@ -21,4 +24,4 @@ export class CommentBox extends Component {
   render() {
     // ...
   }
-};
+}

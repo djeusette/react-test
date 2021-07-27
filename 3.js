@@ -1,92 +1,38 @@
-// We want to update the title present in the Header everytime we navigate to a new page.
-// Is passing the _setTitle method with the props the way to go?
+// We'd like to change the title present in the Header
+// everytime the App is rendered.
+// Is passing the setPageTitle function
+// with the props the way to go?
+// What are the alternatives? Give a few pros and cons.
+// Secondly, the App contains a BurgerMenu. The content
+// of that menu depends on the mounted children of the App.
+// For instance, if the current page is "Payments",
+// the corresponding link is disabled.
+// If the current page is "Onboarding", only "Profile" is displayed.
+// How would you handle that burger menu, and its dynamic content?
 
-import React, { Component, PropTypes } from 'react';
+import React, { useState } from "react";
 
-export class App extends Component {
-  constructor() {
-    super();
-    this.state = { pageTitle: "My app" };
-    this._setTitle = this._setTitle.bind(this);
-  }
+const App = ({ children }) => {
+  const [pageTitle, setPageTitle] = useState("My app");
 
-  _setTitle(title) {
-    this.setState({ pageTitle: title });
-  }
-
-  render() {
-    const { pageTitle } = this.state.pageTitle;
-
-    return (
-      <div>
-        <Header title={pageTitle} />
-        { React.cloneElement(children, { this._setTitle }) }
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header title={pageTitle} />
+      <BurgerMenu />
+      {React.cloneElement(children, { setPageTitle: setPageTitle })}
+      <Footer />
+    </div>
+  );
 };
 
-export class Header extends Component {
-  static propTypes = {
-    title: PropTypes.string,
-  };
+const Header = ({ title }) => <h2>{title}</h2>;
 
+const BurgerMenu = () => {
   // ...
 
-  render() {
-    const { title } = this.props;
+  return <div>{/* ... */}</div>;
+};
 
-    return (
-      <h2>{title}</h2>
-    );
-  }
-}
-
-export class Footer extends Component {
-  // ...
-}
-
-export class Profile extends Component {
-  static propTypes = {
-    setTitle: PropTypes.func.isRequired,
-  };
-}
-
-export class Projects extends Component {
-  static propTypes = {
-    setTitle: PropTypes.func.isRequired,
-  };
-
-  componentWillMount() {
-    this.props.setTitle('Projects');
-  }
-
-  // ...
-}
-
-export class ProjectForm extends Component {
-  static propTypes = {
-    setTitle: PropTypes.func.isRequired,
-  };
-
-  componentWillMount() {
-    this.props.setTitle('New Project');
-  }
-
-  // ...
-}
-
-export class Translators extends Component {
-  static propTypes = {
-    setTitle: PropTypes.func.isRequired,
-  };
-
-  componentWillMount() {
-    this.props.setTitle('Translators');
-  }
-
-  // ...
-}
-
-// ...
+const Footer = () => ({
+  /* ... */
+});
